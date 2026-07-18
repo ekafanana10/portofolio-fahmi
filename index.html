@@ -30,7 +30,7 @@
     <!-- HERO SECTION -->
     <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
         <div class="flex-1 space-y-6 text-center md:text-left">
-            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 Dynamic rounded-full uppercase tracking-wider">Available for Opportunities</span>
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Available for Opportunities</span>
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
                 Halo, Saya <span class="text-blue-700">Fahmi Muhamad Eka Nugraha</span>
             </h1>
@@ -50,7 +50,6 @@
             </div>
         </div>
         <div class="flex-shrink-0 w-64 h-80 md:w-80 md:h-96 bg-gray-200 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-            <!-- Pemicu eror huruf kapital otomatis diatasi dengan fungsi onerror -->
             <img src="PAS%20FOTO.jpg" onerror="this.onerror=null; this.src='PAS%20FOTO.JPG';" alt="Fahmi Muhamad Eka Nugraha" class="w-full h-full object-cover">
         </div>
     </section>
@@ -156,7 +155,7 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: PORTFOLIO PROJECT (PDF) -->
+    <!-- PORTFOLIO PROJECT -->
     <section id="project" class="bg-white py-20 px-6 border-t border-b border-gray-100">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-bold text-gray-900 text-center mb-2">Project Portofolio</h2>
@@ -179,7 +178,6 @@
                             <span class="text-xs bg-white text-gray-600 px-2 py-1 rounded border border-gray-200">Financial Risk</span>
                         </div>
                     </div>
-                    <!-- GANTI LINK DI BAWAH DENGAN URL GOOGLE DRIVE PDF KAMU -->
                     <a href="PROYEK_PDF_1.pdf" target="_blank" class="w-full text-center bg-blue-700 text-white font-medium py-2.5 rounded-xl hover:bg-blue-800 transition block text-sm shadow-md shadow-blue-100">
                         <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Buka Laporan (PDF)
                     </a>
@@ -201,7 +199,6 @@
                             <span class="text-xs bg-white text-gray-600 px-2 py-1 rounded border border-gray-200">Budgeting</span>
                         </div>
                     </div>
-                    <!-- GANTI LINK DI BAWAH DENGAN URL GOOGLE DRIVE PDF KAMU -->
                     <a href="PROYEK_PDF_2.pdf" target="_blank" class="w-full text-center bg-blue-700 text-white font-medium py-2.5 rounded-xl hover:bg-blue-800 transition block text-sm shadow-md shadow-blue-100">
                         <i class="fa-solid fa-arrow-up-right-from-square mr-2"></i>Buka Laporan (PDF)
                     </a>
@@ -210,11 +207,11 @@
         </div>
     </section>
 
-    <!-- NEW SECTION: GALERI SERTIFIKAT (FOTO) & KEAHLIAN -->
+    <!-- SECTION: SERTIFIKAT (PDF) & KEAHLIAN -->
     <section id="sertifikat" class="py-20 px-6 max-w-5xl mx-auto">
         <div class="grid md:grid-cols-3 gap-12">
             
-            <!-- List Skills sebelah kiri (Mengambil data lama kamu) -->
+            <!-- List Skills sebelah kiri -->
             <div class="md:col-span-1 space-y-6">
                 <div>
                     <h2 class="text-2xl font-bold text-gray-900 mb-2">Kemampuan</h2>
@@ -240,39 +237,27 @@
                 </div>
             </div>
 
-            <!-- Galeri Foto Sertifikat Interaktif sebelah kanan -->
+            <!-- Galeri PDF Sertifikat Baru Kamu sebelah kanan -->
             <div class="md:col-span-2">
                 <h2 class="text-2xl font-bold text-gray-900 mb-2">Sertifikat Resmi</h2>
                 <div class="w-12 h-1 bg-blue-700 rounded-full mb-6"></div>
 
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <!-- Sertifikat 1 -->
-                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm group">
-                        <div class="h-40 bg-gray-100 overflow-hidden relative cursor-pointer" onclick="openModal('sertif-excel.jpg')">
-                            <!-- GANTI 'sertif-excel.jpg' JADI NAMA FILE FOTO SERTIFIKAT KAMU DI GITHUB -->
-                            <img src="sertif-excel.jpg" onerror="this.src='https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=500'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm font-medium">
-                                <i class="fa-solid fa-magnifying-glass-plus mr-2 text-lg"></i> Lihat Foto
+                <div class="grid sm:grid-cols-1 gap-6">
+                    <!-- Kartu Sertifikat PDF Interaktif -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+                        <!-- Preview Dokumen PDF Langsung di Web -->
+                        <div class="w-full h-80 bg-gray-100 border-b border-gray-200">
+                            <iframe src="sertifikat-AKS-26L89I.pdf" class="w-full h-full" frameborder="0"></iframe>
+                        </div>
+                        <div class="p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div>
+                                <h4 class="font-bold text-base text-gray-900 leading-snug">Sertifikat Resmi Kompetensi Akuntansi Manajerial</h4>
+                                <p class="text-xs text-gray-500 mt-1"><i class="fa-solid fa-file-pdf text-red-500 mr-1"></i> File Dokumen: sertifikat-AKS-26L89I.pdf</p>
                             </div>
-                        </div>
-                        <div class="p-4">
-                            <h4 class="font-bold text-sm text-gray-900 leading-snug">Bootcamp Microsoft Excel & SQL</h4>
-                            <p class="text-xs text-gray-500 mt-1">KEI Learning (2026)</p>
-                        </div>
-                    </div>
-
-                    <!-- Sertifikat 2 -->
-                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm group">
-                        <div class="h-40 bg-gray-100 overflow-hidden relative cursor-pointer" onclick="openModal('sertif-karirnex.jpg')">
-                            <!-- GANTI 'sertif-karirnex.jpg' JADI NAMA FILE FOTO SERTIFIKAT KAMU DI GITHUB -->
-                            <img src="sertif-karirnex.jpg" onerror="this.src='https://images.unsplash.com/photo-1589330694653-ded6df03f754?w=500'" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
-                            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-sm font-medium">
-                                <i class="fa-solid fa-magnifying-glass-plus mr-2 text-lg"></i> Lihat Foto
-                            </div>
-                        </div>
-                        <div class="p-4">
-                            <h4 class="font-bold text-sm text-gray-900 leading-snug">Intensive 2-Week Excel Intermediate</h4>
-                            <p class="text-xs text-gray-500 mt-1">Karirnex (2026)</p>
+                            <!-- Tombol untuk Perbesar Layar Penuh -->
+                            <a href="sertifikat-AKS-26L89I.pdf" target="_blank" class="inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow-md shadow-blue-100">
+                                <i class="fa-solid fa-expand mr-1.5"></i> Perbesar PDF
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -280,12 +265,6 @@
 
         </div>
     </section>
-
-    <!-- INTERACTIVE FOTO MODAL POP-UP -->
-    <div id="imageModal" class="fixed inset-0 bg-black/80 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4" onclick="closeModal()">
-        <button class="absolute top-6 right-6 text-white text-3xl hover:text-gray-300"><i class="fa-solid fa-xmark"></i></button>
-        <img id="modalImg" src="" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain" onclick="event.stopPropagation()">
-    </div>
 
     <!-- KONTAK -->
     <section id="kontak" class="py-20 px-6 max-w-4xl mx-auto text-center">
@@ -312,20 +291,5 @@
         <p>&copy; 2026 Fahmi Muhamad Eka Nugraha. All Rights Reserved.</p>
     </footer>
 
-    <!-- JAVASCRIPT UNTUK FOTO MODAL POP-UP -->
-    <script>
-        function openModal(imgSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImg');
-            modalImg.src = imgSrc;
-            modal.classList.remove('hidden');
-            setTimeout(() => { modal.classList.add('opacity-100'); }, 10);
-        }
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('opacity-100');
-            setTimeout(() => { modal.classList.add('hidden'); }, 300);
-        }
-    </script>
 </body>
 </html>
