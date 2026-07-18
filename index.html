@@ -6,8 +6,6 @@
     <title>Portofolio | Fahmi Muhamad Eka Nugraha</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- CDN Font Awesome Resmi -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-KcCD38lGQO8cdr7mg5Vx3Fe9c1v651tO5OdaMkvXNuWZ5376lenw5Q9aDG0JwajQ8mK68vEJq4u9cg3355XxlQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
 
@@ -40,16 +38,19 @@
                 Berdomisili di Semarang, Jawa Tengah. Memiliki pengalaman magang di dunia perbankan, terampil dalam analisis data menggunakan Excel & SQL, serta berpengalaman memimpin organisasi berskala besar.
             </p>
             
-            <!-- TOMBOL SOSIAL MEDIA -->
+            <!-- TOMBOL SOSIAL MEDIA DENGAN INLINE SVG (ANTI GAGAL) -->
             <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
                 <a href="#kontak" class="bg-blue-700 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-800 transition shadow-lg shadow-blue-200 flex items-center justify-center">
-                    <i class="fa-solid fa-envelope mr-2"></i>Kontak
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    Kontak
                 </a>
                 <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition flex items-center justify-center">
-                    <i class="fa-brands fa-linkedin text-blue-600 mr-2 text-xl"></i>LinkedIn
+                    <svg class="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
                 </a>
                 <a href="https://instagram.com/ekafanana" target="_blank" class="border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition flex items-center justify-center">
-                    <i class="fa-brands fa-instagram text-pink-600 mr-2 text-xl"></i>Instagram
+                    <svg class="w-5 h-5 mr-2 text-pink-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.209-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Instagram
                 </a>
             </div>
         </div>
@@ -78,10 +79,19 @@
             <div>
                 <h3 class="text-xl font-bold text-gray-900">Politeknik Negeri Semarang</h3>
                 <p class="text-blue-700 font-medium">S.Tr. Akuntansi Manajerial</p>
-                <div class="mt-4 space-y-2 text-sm text-gray-600">
-                    <p class="flex items-center"><i class="fa-solid fa-graduation-cap w-6 text-blue-600"></i> <strong>IPK:</strong> &nbsp;3,67</p>
-                    <p class="flex items-center"><i class="fa-solid fa-hand-holding-dollar w-6 text-blue-600"></i> Penerima Manfaat KIP-K</p>
-                    <p class="flex items-center"><i class="fa-solid fa-lightbulb w-6 text-blue-600"></i> Lolos Pendanaan Program Mahasiswa Wirausaha (PMW) 2025</p>
+                <div class="mt-4 space-y-3 text-sm text-gray-600">
+                    <p class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        <span><strong>IPK:</strong> &nbsp;3,67</span>
+                    </p>
+                    <p class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                        <span>Penerima Manfaat KIP-K</span>
+                    </p>
+                    <p class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1.5.5 2.9 1.5 4a4 4 0 0 1 1.41 2.5"></path></svg>
+                        <span>Lolos Pendanaan Program Mahasiswa Wirausaha (PMW) 2025</span>
+                    </p>
                 </div>
             </div>
             <span class="bg-gray-100 text-gray-700 text-sm font-semibold px-4 py-1.5 rounded-full">2024 – 2028</span>
@@ -159,7 +169,7 @@
         </div>
     </section>
 
-    <!-- SECTION: KEAHLIAN (UPDATED & PREMIUM DESIGN) -->
+    <!-- SECTION: KEAHLIAN -->
     <section id="keahlian" class="py-20 px-6 max-w-5xl mx-auto border-t border-gray-100">
         <div class="text-center max-w-xl mx-auto mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Kemampuan & Keahlian</h2>
@@ -172,13 +182,12 @@
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10 bg-blue-50 text-blue-700 rounded-xl flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-chart-pie"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
                     </div>
                     <h3 class="font-bold text-gray-900 text-lg">Hard Skills</h3>
                 </div>
                 
                 <div class="space-y-5">
-                    <!-- Skill 1 -->
                     <div class="space-y-2">
                         <div class="flex justify-between text-sm font-semibold text-gray-700">
                             <span>Excel & SQL (Data Analytics)</span>
@@ -188,7 +197,6 @@
                             <div class="bg-blue-700 h-full rounded-full" style="width: 90%"></div>
                         </div>
                     </div>
-                    <!-- Skill 2 -->
                     <div class="space-y-2">
                         <div class="flex justify-between text-sm font-semibold text-gray-700">
                             <span>Akuntansi & Perpajakan</span>
@@ -198,7 +206,6 @@
                             <div class="bg-blue-700 h-full rounded-full" style="width: 85%"></div>
                         </div>
                     </div>
-                    <!-- Skill 3 -->
                     <div class="space-y-2">
                         <div class="flex justify-between text-sm font-semibold text-gray-700">
                             <span>Public Speaking & Presentasi</span>
@@ -215,13 +222,12 @@
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10 bg-emerald-50 text-emerald-700 rounded-xl flex items-center justify-center text-lg">
-                        <i class="fa-solid fa-user-tie"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                     </div>
                     <h3 class="font-bold text-gray-900 text-lg">Soft Skills</h3>
                 </div>
                 
                 <div class="space-y-5">
-                    <!-- Skill 1 -->
                     <div class="space-y-2">
                         <div class="flex justify-between text-sm font-semibold text-gray-700">
                             <span>Leadership (Kepemimpinan Organisasi)</span>
@@ -231,7 +237,6 @@
                             <div class="bg-emerald-600 h-full rounded-full" style="width: 95%"></div>
                         </div>
                     </div>
-                    <!-- Skill 2 -->
                     <div class="space-y-2">
                         <div class="flex justify-between text-sm font-semibold text-gray-700">
                             <span>Tim Koordinasi & Manajemen Konflik</span>
@@ -241,7 +246,6 @@
                             <div class="bg-emerald-600 h-full rounded-full" style="width: 90%"></div>
                         </div>
                     </div>
-                    <!-- Skill 3 -->
                     <div class="space-y-2">
                         <div class="flex justify-between text-sm font-semibold text-gray-700">
                             <span>Problem Solving & Analitis</span>
@@ -263,13 +267,13 @@
         <p class="text-gray-600 mb-12 max-w-md mx-auto">Saya selalu terbuka untuk diskusi mengenai peluang karier di bidang perbankan, keuangan, perpajakan, atau kolaborasi proyek wirausaha.</p>
 
         <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <a href="mailto:ekafanana@gmail.com" class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition block">
-                <i class="fa-solid fa-envelope text-blue-700 text-3xl mb-3"></i>
+            <a href="mailto:ekafanana@gmail.com" class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-blue-700 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 <h4 class="font-bold text-gray-900">Email</h4>
                 <p class="text-sm text-gray-500 mt-1">ekafanana@gmail.com</p>
             </a>
-            <a href="https://wa.me/6289629969948" target="_blank" class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition block">
-                <i class="fa-solid fa-phone text-green-600 text-3xl mb-3"></i>
+            <a href="https://wa.me/6289629969948" target="_blank" class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-600 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 <h4 class="font-bold text-gray-900">Telepon / WhatsApp</h4>
                 <p class="text-sm text-gray-500 mt-1">+62 896-2996-9948</p>
             </a>
