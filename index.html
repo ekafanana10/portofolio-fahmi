@@ -6,7 +6,7 @@
     <title>Portofolio | Fahmi Muhamad Eka Nugraha</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Perbaikan CDN Font Awesome (Menggunakan versi CDNJS resmi yang valid) -->
+    <!-- Perbaikan CDN Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-KcCD38lGQO8cdr7mg5Vx3Fe9c1v651tO5OdaMkvXNuWZ5376lenw5Q9aDG0JwajQ8mK68vEJq4u9cg3355XxlQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
@@ -20,7 +20,7 @@
                 <a href="#pendidikan" class="hover:text-blue-700 transition">Pendidikan</a>
                 <a href="#pengalaman" class="hover:text-blue-700 transition">Pengalaman</a>
                 <a href="#organisasi" class="hover:text-blue-700 transition">Organisasi</a>
-                <a href="#sertifikat" class="hover:text-blue-700 transition">Sertifikat & Keahlian</a>
+                <a href="#keahlian" class="hover:text-blue-700 transition">Keahlian</a>
             </div>
             <a href="#kontak" class="bg-blue-700 text-white px-5 py-2 rounded-full font-medium hover:bg-blue-800 transition text-sm shadow-md shadow-blue-200">Hubungi Saya</a>
         </div>
@@ -48,7 +48,6 @@
                 <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition flex items-center justify-center">
                     <i class="fa-brands fa-linkedin text-blue-600 mr-2 text-xl"></i>LinkedIn
                 </a>
-                <!-- Tombol Instagram yang Ditambahkan -->
                 <a href="https://instagram.com/ekafanana" target="_blank" class="border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition flex items-center justify-center">
                     <i class="fa-brands fa-instagram text-pink-600 mr-2 text-xl"></i>Instagram
                 </a>
@@ -160,59 +159,37 @@
         </div>
     </section>
 
-    <!-- SECTION: SERTIFIKAT & KEAHLIAN -->
-    <section id="sertifikat" class="py-20 px-6 max-w-5xl mx-auto border-t border-gray-100">
-        <div class="grid md:grid-cols-3 gap-12">
+    <!-- SECTION: KEAHLIAN -->
+    <section id="keahlian" class="py-20 px-6 max-w-5xl mx-auto border-t border-gray-100">
+        <div class="text-center max-w-xl mx-auto mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Kemampuan & Keahlian</h2>
+            <div class="w-16 h-1 bg-blue-700 mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <!-- Hard Skills -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4 text-blue-700 flex items-center gap-2">
+                    <i class="fa-solid fa-laptop-code"></i> Hard Skills
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1.5 rounded-xl font-medium">Excel & SQL</span>
+                    <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1.5 rounded-xl font-medium">Akuntansi & Pajak</span>
+                    <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1.5 rounded-xl font-medium">Public Speaking</span>
+                </div>
+            </div>
             
-            <!-- List Skills sebelah kiri -->
-            <div class="md:col-span-1 space-y-6">
-                <div>
-                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Kemampuan</h2>
-                    <div class="w-12 h-1 bg-blue-700 rounded-full mb-6"></div>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 text-xs uppercase mb-2">Hard Skills</h4>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg font-medium">Excel & SQL</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg font-medium">Akuntansi & Pajak</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs px-2.5 py-1 rounded-lg font-medium">Public Speaking</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 text-xs uppercase mb-2">Soft Skills</h4>
-                            <div class="flex flex-wrap gap-1.5">
-                                <span class="bg-blue-50 text-blue-800 text-xs px-2.5 py-1 rounded-lg font-medium">Leadership</span>
-                                <span class="bg-blue-50 text-blue-800 text-xs px-2.5 py-1 rounded-lg font-medium">Tim Koordinasi</span>
-                                <span class="bg-blue-50 text-blue-800 text-xs px-2.5 py-1 rounded-lg font-medium">Problem Solving</span>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Soft Skills -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4 text-blue-700 flex items-center gap-2">
+                    <i class="fa-solid fa-users-gear"></i> Soft Skills
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-blue-50 text-blue-800 text-sm px-3 py-1.5 rounded-xl font-medium">Leadership</span>
+                    <span class="bg-blue-50 text-blue-800 text-sm px-3 py-1.5 rounded-xl font-medium">Tim Koordinasi</span>
+                    <span class="bg-blue-50 text-blue-800 text-sm px-3 py-1.5 rounded-xl font-medium">Problem Solving</span>
                 </div>
             </div>
-
-            <!-- Bagian Sertifikat Berbentuk Kartu Link -->
-            <div class="md:col-span-2">
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Sertifikat Resmi</h2>
-                <div class="w-12 h-1 bg-blue-700 rounded-full mb-6"></div>
-
-                <div class="grid sm:grid-cols-1 gap-6">
-                    <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-blue-400 transition duration-300">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-red-500 text-2xl flex-shrink-0">
-                                <i class="fa-solid fa-file-pdf"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-gray-900 text-base leading-tight">Sertifikat Resmi Kompetensi Akuntansi Manajerial</h4>
-                                <p class="text-xs text-gray-500 mt-1">Politeknik Negeri Semarang • File Resmi Terverifikasi</p>
-                            </div>
-                        </div>
-                        <a href="sertifikat-AKS-26L89I.pdf" target="_blank" class="w-full sm:w-auto text-center bg-blue-700 hover:bg-blue-800 text-white text-xs font-semibold px-5 py-3 rounded-xl transition shadow-md shadow-blue-100 flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Sertifikat (PDF)
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
