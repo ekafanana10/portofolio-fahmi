@@ -6,7 +6,7 @@
     <title>Portofolio | Fahmi Muhamad Eka Nugraha</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Perbaikan CDN Font Awesome -->
+    <!-- CDN Font Awesome Resmi -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-KcCD38lGQO8cdr7mg5Vx3Fe9c1v651tO5OdaMkvXNuWZ5376lenw5Q9aDG0JwajQ8mK68vEJq4u9cg3355XxlQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
@@ -159,35 +159,98 @@
         </div>
     </section>
 
-    <!-- SECTION: KEAHLIAN -->
+    <!-- SECTION: KEAHLIAN (UPDATED & PREMIUM DESIGN) -->
     <section id="keahlian" class="py-20 px-6 max-w-5xl mx-auto border-t border-gray-100">
-        <div class="text-center max-w-xl mx-auto mb-12">
+        <div class="text-center max-w-xl mx-auto mb-16">
             <h2 class="text-3xl font-bold text-gray-900 mb-2">Kemampuan & Keahlian</h2>
             <div class="w-16 h-1 bg-blue-700 mx-auto rounded-full"></div>
+            <p class="text-sm text-gray-500 mt-4">Kombinasi kompetensi teknis di bidang finansial data dengan kapasitas kepemimpinan yang teruji.</p>
         </div>
         
-        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-            <!-- Hard Skills -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4 text-blue-700 flex items-center gap-2">
-                    <i class="fa-solid fa-laptop-code"></i> Hard Skills
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1.5 rounded-xl font-medium">Excel & SQL</span>
-                    <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1.5 rounded-xl font-medium">Akuntansi & Pajak</span>
-                    <span class="bg-gray-100 text-gray-800 text-sm px-3 py-1.5 rounded-xl font-medium">Public Speaking</span>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Hard Skills Card -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-blue-50 text-blue-700 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg">Hard Skills</h3>
+                </div>
+                
+                <div class="space-y-5">
+                    <!-- Skill 1 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-gray-700">
+                            <span>Excel & SQL (Data Analytics)</span>
+                            <span class="text-blue-700">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-blue-700 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 2 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-gray-700">
+                            <span>Akuntansi & Perpajakan</span>
+                            <span class="text-blue-700">85%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-blue-700 h-full rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 3 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-gray-700">
+                            <span>Public Speaking & Presentasi</span>
+                            <span class="text-blue-700">88%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-blue-700 h-full rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <!-- Soft Skills -->
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4 text-blue-700 flex items-center gap-2">
-                    <i class="fa-solid fa-users-gear"></i> Soft Skills
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-blue-50 text-blue-800 text-sm px-3 py-1.5 rounded-xl font-medium">Leadership</span>
-                    <span class="bg-blue-50 text-blue-800 text-sm px-3 py-1.5 rounded-xl font-medium">Tim Koordinasi</span>
-                    <span class="bg-blue-50 text-blue-800 text-sm px-3 py-1.5 rounded-xl font-medium">Problem Solving</span>
+            <!-- Soft Skills Card -->
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 bg-emerald-50 text-emerald-700 rounded-xl flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg">Soft Skills</h3>
+                </div>
+                
+                <div class="space-y-5">
+                    <!-- Skill 1 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-gray-700">
+                            <span>Leadership (Kepemimpinan Organisasi)</span>
+                            <span class="text-emerald-700">95%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600 h-full rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 2 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-gray-700">
+                            <span>Tim Koordinasi & Manajemen Konflik</span>
+                            <span class="text-emerald-700">90%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600 h-full rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <!-- Skill 3 -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm font-semibold text-gray-700">
+                            <span>Problem Solving & Analitis</span>
+                            <span class="text-emerald-700">87%</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-emerald-600 h-full rounded-full" style="width: 87%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
