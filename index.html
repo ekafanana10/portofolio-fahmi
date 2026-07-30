@@ -6,346 +6,277 @@
     <title>Fahmi Muhamad Eka Nugraha - Portofolio Profesional</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
+    <!-- Font Awesome untuk Ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        corporate: {
-                            900: '#0f172a',
-                            800: '#1e293b',
-                            700: '#334155',
-                            accent: '#0d9488',
-                            light: '#f8fafc',
-                        }
+                        primary: '#1e40af', // Blue 800
+                        secondary: '#0f172a', // Slate 900
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-corporate-light text-slate-800 font-sans antialiased selection:bg-corporate-accent selection:text-white">
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-slate-200">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="font-bold text-xl text-corporate-900 tracking-tight">
-                FAHMI M. E. N.<span class="text-corporate-accent">.</span>
-            </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-corporate-accent transition">Tentang</a>
-                <a href="#experience" class="hover:text-corporate-accent transition">Pengalaman</a>
-                <a href="#education" class="hover:text-corporate-accent transition">Pendidikan</a>
-                <a href="#achievements" class="hover:text-corporate-accent transition">Pencapaian</a>
-                <a href="#organization" class="hover:text-corporate-accent transition">Organisasi</a>
-                <a href="#skills" class="hover:text-corporate-accent transition">Keahlian</a>
-            </div>
-            <a href="#contact" class="hidden md:inline-block bg-corporate-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-corporate-800 transition shadow-sm">Hubungi Saya</a>
-            <button id="menu-btn" class="md:hidden text-slate-700 focus:outline-none">
-                <i class="fa-solid fa-bars text-xl"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b px-4 pt-2 pb-4 space-y-2">
-            <a href="#about" class="block py-2 text-slate-600 hover:text-corporate-accent">Tentang</a>
-            <a href="#experience" class="block py-2 text-slate-600 hover:text-corporate-accent">Pengalaman</a>
-            <a href="#education" class="block py-2 text-slate-600 hover:text-corporate-accent">Pendidikan</a>
-            <a href="#achievements" class="block py-2 text-slate-600 hover:text-corporate-accent">Pencapaian</a>
-            <a href="#organization" class="block py-2 text-slate-600 hover:text-corporate-accent">Organisasi</a>
-            <a href="#skills" class="block py-2 text-slate-600 hover:text-corporate-accent">Keahlian</a>
-            <a href="#contact" class="block py-2 text-corporate-900 font-semibold">Hubungi Saya</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="pt-32 pb-24 md:pt-40 md:pb-32 bg-corporate-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center gap-12">
-            <div class="w-48 h-48 md:w-60 md:h-60 rounded-xl overflow-hidden shadow-2xl border-2 border-slate-700 flex-shrink-0 bg-slate-800">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Fahmi Muhamad Eka Nugraha" class="w-full h-full object-cover grayscale contrast-125">
-            </div>
-            <div class="text-center md:text-left">
-                <span class="bg-corporate-accent/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded uppercase tracking-wider border border-teal-500/30">Mahasiswa S.Tr. Akuntansi Manajerial</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold mt-3 tracking-tight text-white">Fahmi Muhamad Eka Nugraha</h1>
-                <p class="text-slate-300 text-base md:text-lg mt-4 max-w-2xl leading-relaxed">
-                    Mahasiswa semester 5 dengan pengalaman magang di perbankan, terampil dalam analisis data menggunakan Excel, serta berpengalaman memimpin organisasi skala besar. Berkomitmen mengembangkan karier di bidang keuangan perbankan dan perpajakan.
-                </p>
-                <div class="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
-                    <a href="#contact" class="bg-corporate-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-700 transition shadow-sm flex items-center gap-2">
-                        <i class="fa-solid fa-envelope"></i> Hubungi Saya
-                    </a>
-                    <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 px-6 py-3 rounded-lg font-medium transition flex items-center gap-2">
-                        <i class="fa-brands fa-linkedin text-teal-400"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold text-primary tracking-wide">Fahmi Muhamad Eka Nugraha</a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="#tentang" class="hover:text-primary transition">Tentang</a>
+                <a href="#pengalaman" class="hover:text-primary transition">Pengalaman</a>
+                <a href="#pendidikan" class="hover:text-primary transition">Pendidikan</a>
+                <a href="#organisasi" class="hover:text-primary transition">Organisasi</a>
+                <a href="#prestasi" class="hover:text-primary transition">Prestasi & Sertifikasi</a>
+                <a href="#kontak" class="hover:text-primary transition">Kontak</a>
+            </nav>
+            <a href="#kontak" class="hidden md:inline-block bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow hover:bg-blue-900 transition">Hubungi Saya</a>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:h-screen flex items-center bg-gradient-to-br from-blue-50 via-slate-50 to-white">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block bg-blue-100 text-primary text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Mahasiswa S.Tr. Akuntansi Manajerial</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-secondary tracking-tight mb-6">
+                    Halo, Saya <span class="text-primary">Fahmi Muhamad Eka</span>
+                </h1>
+                <p class="text-lg text-slate-600 mb-8">
+                    Mahasiswa semester 5 dengan pengalaman magang di perbankan. Terampil dalam analisis data, serta berpengalaman memimpin organisasi berskala 55 anggota[cite: 1]. Berkomitmen mengembangkan karier di bidang keuangan perbankan dan perpajakan[cite: 1].
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#kontak" class="bg-primary text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-blue-900 transition flex items-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
+                    </a>
+                    <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl shadow-sm hover:bg-slate-100 transition flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin text-blue-600"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
+                    <!-- Foto Profil -->
+                    <img src="bahan forto.pdf" alt="Fahmi Muhamad Eka Nugraha" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Info Singkat -->
-        <section id="about" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex items-center gap-4">
-                <div class="bg-slate-100 text-corporate-900 p-3.5 rounded-lg"><i class="fa-solid fa-location-dot"></i></div>
-                <div>
-                    <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Domisili</h3>
-                    <p class="font-semibold text-slate-800 mt-0.5">Semarang, Jawa Tengah</p>
-                </div>
+    <!-- Tentang & Keahlian -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-secondary">Tentang & Keahlian</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex items-center gap-4">
-                <div class="bg-slate-100 text-corporate-900 p-3.5 rounded-lg"><i class="fa-solid fa-envelope"></i></div>
-                <div>
-                    <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Email</h3>
-                    <p class="font-semibold text-slate-800 mt-0.5">ekafanana@gmail.com</p>
-                </div>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 flex items-center gap-4">
-                <div class="bg-slate-100 text-corporate-900 p-3.5 rounded-lg"><i class="fa-solid fa-phone"></i></div>
-                <div>
-                    <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Telepon</h3>
-                    <p class="font-semibold text-slate-800 mt-0.5">+62 896-2996-9948</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Pengalaman Profesional -->
-        <section id="experience">
-            <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
-                <div class="text-corporate-accent text-xl"><i class="fa-solid fa-briefcase"></i></div>
-                <h2 class="text-2xl font-bold text-corporate-900">Pengalaman Profesional</h2>
-            </div>
-            <div class="space-y-6 border-l-2 border-slate-300 ml-3 pl-6 relative">
-                <div class="relative bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="absolute -left-[31px] top-6 w-3 h-3 rounded-full bg-corporate-accent border-2 border-white"></div>
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">Mei – Juni 2024</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">Tour Leader – Freelance</h3>
-                    <h4 class="text-sm font-medium text-slate-600">Farhah Group (Tour and Travel) • Tanggerang, Banten</h4>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Mengoordinasikan 5+ perjalanan wisata untuk kelompok 100–250 peserta, meliputi persiapan meeting, pengecekan rundown, dan koordinasi operasional.</li>
-                        <li>Bertanggung jawab terhadap peserta selama perjalanan, komunikasi dengan tamu, tim operasional, dan vendor.</li>
-                        <li>Mengelola logistik dan administrasi peserta (konsumsi, penginapan, pembagian kamar, absensi, dan itinerary).</li>
-                    </ul>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Keterampilan Teknis -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Keterampilan Teknis</h3>
+                    <p class="text-sm text-slate-600 mb-4">Accounting, General Ledgers, Financial Reporting, Bookkeeping, Perencanaan Anggaran, Accurate Online, MYOB, Microsoft Excel, Microsoft Word, Microsoft Office Suite[cite: 1].</p>
                 </div>
-                <div class="relative bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                    <div class="absolute -left-[31px] top-6 w-3 h-3 rounded-full bg-corporate-accent border-2 border-white"></div>
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">Nov. 2023 – Jan. 2024</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">Praktik Kerja Lapangan (PKL)</h3>
-                    <h4 class="text-sm font-medium text-slate-600">Bank Woori Saudara KCP Singaparna • Kab. Tasikmalaya, Jawa Barat</h4>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Memproses 20+ pembukaan rekening baru selama 3 bulan dengan tingkat akurasi 100% tanpa kesalahan administrasi sesuai SOP.</li>
-                        <li>Mendampingi dan melayani 20+ nasabah dalam proses administrasi pembukaan rekening hingga aktivasi produk perbankan.</li>
-                        <li>Mengelola dan mengarsipkan dokumen nasabah secara sistematis untuk mendukung kelancaran administrasi internal bank.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
-        <!-- Pendidikan -->
-        <section id="education">
-            <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
-                <div class="text-corporate-accent text-xl"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h2 class="text-2xl font-bold text-corporate-900">Pendidikan</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">2024 – 2028</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">S.Tr. Akuntansi Manajerial</h3>
-                    <h4 class="text-sm font-medium text-slate-600">Politeknik Negeri Semarang, Semarang</h4>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded font-medium">IPK: 3,67</span>
-                        <span class="bg-teal-50 text-teal-800 text-xs px-3 py-1 rounded font-medium">Penerima KIP-K</span>
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded font-medium">PMW 2025</span>
+                <!-- Keterampilan Sosial -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-users"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Keterampilan Sosial</h3>
+                    <p class="text-sm text-slate-600 mb-4">Kepemimpinan, Analisis & Pemecahan Masalah, Komunikasi & Interpersonal, Kerjasama Tim, Time Management[cite: 1].</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">2021 – 2024</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">Perbankan Keuangan Mikro</h3>
-                    <h4 class="text-sm font-medium text-slate-600">SMKN Parungponteng, Tasikmalaya</h4>
-                    <div class="mt-4 flex flex-wrap gap-2">
-                        <span class="bg-slate-100 text-slate-700 text-xs px-3 py-1 rounded font-medium">Nilai: 85,50</span>
-                        <span class="bg-teal-50 text-teal-800 text-xs px-3 py-1 rounded font-medium">Peringkat 3 Paralel Jurusan</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Pencapaian -->
-        <section id="achievements">
-            <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
-                <div class="text-corporate-accent text-xl"><i class="fa-solid fa-award"></i></div>
-                <h2 class="text-2xl font-bold text-corporate-900">Pencapaian & Kompetisi</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
-                    <div class="bg-slate-100 text-slate-700 p-3 rounded-lg"><i class="fa-solid fa-medal text-lg"></i></div>
-                    <div>
-                        <span class="text-xs text-slate-400 font-medium">Juli 2025</span>
-                        <h4 class="font-bold text-corporate-900 text-sm">Medali Perak - Isaac Newton Competition (INC) 2025</h4>
-                        <p class="text-xs text-slate-600 mt-0.5">IPB University & LBPN</p>
+                <!-- Minat & Bahasa -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bullseye"></i>
                     </div>
-                </div>
-                <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
-                    <div class="bg-slate-100 text-slate-700 p-3 rounded-lg"><i class="fa-solid fa-medal text-lg"></i></div>
-                    <div>
-                        <span class="text-xs text-slate-400 font-medium">Mei 2025</span>
-                        <h4 class="font-bold text-corporate-900 text-sm">Medali Perunggu - Islamic Science Competition (ISC) 2025</h4>
-                        <p class="text-xs text-slate-600 mt-0.5">POSI</p>
-                    </div>
-                </div>
-                <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
-                    <div class="bg-slate-100 text-slate-700 p-3 rounded-lg"><i class="fa-solid fa-medal text-lg"></i></div>
-                    <div>
-                        <span class="text-xs text-slate-400 font-medium">Desember 2023</span>
-                        <h4 class="font-bold text-corporate-900 text-sm">Medali Perak - Olimpiade Nasional Prestasi Akademik (ONPA)</h4>
-                        <p class="text-xs text-slate-600 mt-0.5">LPCI</p>
-                    </div>
-                </div>
-                <div class="bg-white p-5 rounded-xl border border-slate-200 flex items-start gap-4 shadow-sm">
-                    <div class="bg-slate-100 text-slate-700 p-3 rounded-lg"><i class="fa-solid fa-trophy text-lg"></i></div>
-                    <div>
-                        <span class="text-xs text-slate-400 font-medium">Juni 2023</span>
-                        <h4 class="font-bold text-corporate-900 text-sm">Medali Emas - Olimpiade Sains Pelajar Nasional (OSPN)</h4>
-                        <p class="text-xs text-slate-600 mt-0.5">LPCI</p>
-                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Minat & Bahasa</h3>
+                    <p class="text-sm text-slate-600 mb-2"><strong>Minat:</strong> Akuntansi Keuangan, Perbankan, Perpajakan, Analisis Data, Audit Internal[cite: 1].</p>
+                    <p class="text-sm text-slate-600"><strong>Bahasa:</strong> Bahasa Indonesia (Penutur Asli), Bahasa Inggris (Tingkat Dasar)[cite: 1].</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Organisasi & Kegiatan -->
-        <section id="organization">
-            <div class="flex items-center gap-3 mb-8 pb-3 border-b border-slate-200">
-                <div class="text-corporate-accent text-xl"><i class="fa-solid fa-users"></i></div>
-                <h2 class="text-2xl font-bold text-corporate-900">Organisasi & Kepemimpinan</h2>
+    <!-- Pengalaman Profesional -->
+    <section id="pengalaman" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-secondary">Pengalaman Profesional</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">2025 – 2026</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">Ketua Umum – KAMADIKSI POLINES</h3>
-                    <p class="text-xs text-slate-500 mb-3">Semarang, Jawa Tengah</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Farhah Group -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">Mei - Juni 2024</span>
+                    <h3 class="text-xl font-bold text-secondary mt-3">Tour Leader - Freelance</h3>
+                    <p class="text-sm font-medium text-slate-500 mb-4">Farhah Group (Tour and Travel) • Tanggerang, Banten[cite: 1]</p>
                     <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Memimpin 55 anggota, 6 divisi, dan mengoordinasikan 21 program kerja.</li>
-                        <li>Mengelola komunikasi sponsor & stakeholder serta menyusun SOP peminjaman dana organisasi.</li>
+                        <li>Mengoordinasikan 5+ perjalanan wisata untuk kelompok 100-250 peserta, meliputi persiapan meeting, pengecekan rundown, dan koordinasi operasional[cite: 1].</li>
+                        <li>Bertanggung jawab terhadap peserta selama perjalanan dan komunikasi dengan vendor[cite: 1].</li>
+                        <li>Mengelola logistik dan administrasi peserta (konsumsi, penginapan, pembagian kamar, absensi)[cite: 1].</li>
                     </ul>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">2026 – 2028</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">Satuan Tugas – PPKPT POLINES</h3>
-                    <p class="text-xs text-slate-500 mb-3">Semarang, Jawa Tengah</p>
+
+                <!-- Bank Woori Saudara -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">Nov 2023 - Jan 2024</span>
+                    <h3 class="text-xl font-bold text-secondary mt-3">Praktik Kerja Lapangan (PKL)</h3>
+                    <p class="text-sm font-medium text-slate-500 mb-4">Bank Woori Saudara KCP Singaparna • Tasikmalaya, Jawa Barat[cite: 1]</p>
                     <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Mengelola media sosial dan layanan komunikasi resmi WhatsApp untuk edukasi dan respons pengaduan.</li>
-                        <li>Mendokumentasikan laporan daring serta mengoordinasikan proses penanganan kasus dan penjadwalan.</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">2025 – 2026</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">Satuan Tugas – Tax Center Polines</h3>
-                    <p class="text-xs text-slate-500 mb-3">Semarang, Jawa Tengah</p>
-                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Berperan sebagai MC & panitia Lomba Cerdas Cermat Perpajakan nasional (69 sekolah, 11 provinsi).</li>
-                        <li>Menjadi orator dalam video edukasi perpajakan dan mengawal rangkaian acara hingga final.</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <span class="text-xs font-semibold text-corporate-accent uppercase tracking-wider">2023 – 2024</span>
-                    <h3 class="text-lg font-bold text-corporate-900 mt-1">Ketua OSIS – SMKN Parungponteng</h3>
-                    <p class="text-xs text-slate-500 mb-3">Kab. Tasikmalaya, Jawa Barat</p>
-                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Memimpin kepengurusan siswa dan berkolaborasi dengan guru serta organisasi lain dalam program kerja sekolah.</li>
-                        <li>Mengembangkan kepemimpinan, komunikasi, dan penyelesaian masalah organisasi.</li>
+                        <li>Memproses 20+ pembukaan rekening baru selama 3 bulan magang sesuai SOP dengan tingkat akurasi 100% tanpa kesalahan[cite: 1].</li>
+                        <li>Mendampingi dan melayani 20+ nasabah dalam proses administrasi hingga aktivasi produk perbankan[cite: 1].</li>
+                        <li>Mengelola dan mengarsipkan dokumen nasabah (pinjaman & pembukaan rekening) secara sistematis[cite: 1].</li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Keahlian & Sertifikasi -->
-        <section id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h3 class="text-xl font-bold text-corporate-900 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-code text-corporate-accent"></i> Keahlian Teknis & Lainnya
-                </h3>
-                <div class="space-y-4">
+    <!-- Pendidikan -->
+    <section id="pendidikan" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-secondary">Pendidikan</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center">
                     <div>
-                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Teknis</span>
-                        <div class="flex flex-wrap gap-2 mt-2">
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Accounting</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">General Ledgers</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Financial Reporting</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Accurate Online</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">MYOB</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Microsoft Excel (Intermediate)</span>
-                        </div>
+                        <h3 class="text-lg font-bold text-secondary">S.Tr. Akuntansi Manajerial</h3>
+                        <p class="text-sm text-slate-600">Politeknik Negeri Semarang (Semarang, Jawa Tengah)[cite: 1]</p>
+                        <p class="text-xs text-primary font-semibold mt-1">IPK: 3,67 | Penerima Manfaat KIP-K | Lolos Pendanaan PMW 2025[cite: 1]</p>
                     </div>
+                    <span class="mt-2 md:mt-0 text-sm font-bold text-slate-500">2024 - 2028[cite: 1]</span>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center">
                     <div>
-                        <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Keterampilan Sosial</span>
-                        <div class="flex flex-wrap gap-2 mt-2">
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Kepemimpinan</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Analisis & Pemecahan Masalah</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Komunikasi</span>
-                            <span class="bg-slate-100 text-slate-700 px-3 py-1 rounded text-xs font-medium">Kerjasama Tim</span>
-                        </div>
+                        <h3 class="text-lg font-bold text-secondary">Perbankan Keuangan Mikro</h3>
+                        <p class="text-sm text-slate-600">SMKN Parungponteng (Tasikmalaya, Jawa Barat)[cite: 1]</p>
+                        <p class="text-xs text-primary font-semibold mt-1">Nilai: 85,50 | Peringkat 3 Paralel Jurusan[cite: 1]</p>
                     </div>
+                    <span class="mt-2 md:mt-0 text-sm font-bold text-slate-500">2021 - 2024[cite: 1]</span>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h3 class="text-xl font-bold text-corporate-900 mb-4 flex items-center gap-2">
-                    <i class="fa-solid fa-certificate text-corporate-accent"></i> Lisensi & Sertifikasi
-                </h3>
-                <ul class="space-y-3 text-sm text-slate-700">
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-corporate-accent mt-1"></i>
-                        <span><strong>Accurate Online Training</strong> – Sekolah Pajak (Juli 2026)</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-corporate-accent mt-1"></i>
-                        <span><strong>Intensive Bootcamp 2 Weeks - MS Excel (Intermediate)</strong> – KarirNex (Feb 2026)</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-corporate-accent mt-1"></i>
-                        <span><strong>Mini Bootcamp MS Excel & SQL</strong> – Komunitas Excel Indonesia (Feb 2026)</span>
-                    </li>
-                    <li class="flex items-start gap-3">
-                        <i class="fa-solid fa-check text-corporate-accent mt-1"></i>
-                        <span><strong>Penerima Bantuan Modal PMW</strong> – Politeknik Negeri Semarang (Sep 2025)</span>
-                    </li>
-                </ul>
+    <!-- Organisasi & Kegiatan -->
+    <section id="organisasi" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-secondary">Organisasi & Kegiatan</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
             </div>
-        </section>
 
-        <!-- Kontak & Footer CTA -->
-        <section id="contact" class="bg-corporate-900 text-white p-8 md:p-12 rounded-2xl text-center space-y-6 shadow-xl border border-slate-800">
-            <h2 class="text-3xl font-bold">Tertarik Berkolaborasi?</h2>
-            <p class="text-slate-300 max-w-xl mx-auto text-sm md:text-base">
-                Saya selalu terbuka untuk diskusi peluang karier, magang, maupun proyek di bidang keuangan, perbankan, dan perpajakan.
-            </p>
-            <div class="flex justify-center gap-4 pt-2">
-                <a href="mailto:ekafanana@gmail.com" class="bg-corporate-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-700 transition shadow-sm">
-                    <i class="fa-solid fa-envelope mr-2"></i> Kirim Email
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Kamadiksi Polines -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2025 - 2026[cite: 1]</span>
+                    <h3 class="text-xl font-bold text-secondary mt-2">Ketua Umum</h3>
+                    <p class="text-sm font-medium text-slate-500 mb-4">KAMADIKSI POLINES, Semarang[cite: 1]</p>
+                    <p class="text-sm text-slate-600">Memimpin organisasi dengan 55 anggota dan 6 divisi serta mengoordinasikan 21 program kerja. Mengelola komunikasi sponsor dan menyusun SOP peminjaman dana[cite: 1].</p>
+                </div>
+
+                <!-- OSIS SMKN Parungponteng -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2023 - 2024[cite: 1]</span>
+                    <h3 class="text-xl font-bold text-secondary mt-2">Ketua OSIS</h3>
+                    <p class="text-sm font-medium text-slate-500 mb-4">OSIS SMKN Parungponteng, Tasikmalaya[cite: 1]</p>
+                    <p class="text-sm text-slate-600">Memimpin organisasi siswa, mengoordinasikan pengurus dan pelaksanaan program kerja sekolah, serta berkolaborasi bersama guru dan siswa[cite: 1].</p>
+                </div>
+
+                <!-- PPKPT Polines -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2026 - 2028[cite: 1]</span>
+                    <h3 class="text-xl font-bold text-secondary mt-2">Satuan Tugas</h3>
+                    <p class="text-sm font-medium text-slate-500 mb-4">PPKPT POLINES, Semarang[cite: 1]</p>
+                    <p class="text-sm text-slate-600">Mengelola media sosial dan layanan komunikasi resmi, serta menerima, mendokumentasikan, dan mengadministrasikan laporan yang masuk[cite: 1].</p>
+                </div>
+
+                <!-- Tax Center Polines -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2025 - 2026[cite: 1]</span>
+                    <h3 class="text-xl font-bold text-secondary mt-2">Satuan Tugas</h3>
+                    <p class="text-sm font-medium text-slate-500 mb-4">Tax Center Polines, Semarang[cite: 1]</p>
+                    <p class="text-sm text-slate-600">Berperan sebagai MC dan panitia Lomba Cerdas Cermat Perpajakan tingkat nasional (69 sekolah, 11 provinsi) serta orator video edukasi[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prestasi & Sertifikasi -->
+    <section id="prestasi" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-secondary">Prestasi & Lisensi</h2>
+                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Prestasi -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <h3 class="text-xl font-bold text-secondary mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-amber-500"></i> Pencapaian & Medali
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li>🥈 <strong>Medali Perak</strong> - Isaac Newton Competition (INC) 2025 | IPB University & LBPN (Jul 2025)[cite: 1]</li>
+                        <li>🥉 <strong>Medali Perunggu</strong> - Islamic Science Competition (ISC) 2025 | POSI (Mei 2025)[cite: 1]</li>
+                        <li>🥈 <strong>Medali Perak</strong> - Olimpiade Nasional Prestasi Akademik (ONPA) | LPCI (Des 2023)[cite: 1]</li>
+                        <li>🥇 <strong>Medali Emas</strong> - Olimpiade Sains Pelajar Nasional (OSPN) | LPCI (Jun 2023)[cite: 1]</li>
+                    </ul>
+                </div>
+
+                <!-- Lisensi & Sertifikasi -->
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                    <h3 class="text-xl font-bold text-secondary mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-certificate text-blue-500"></i> Lisensi & Pelatihan
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li>📜 Accurate Online Training | Sekolah Pajak (Juli 2026)[cite: 1]</li>
+                        <li>💻 Intensive Bootcamp 2 Weeks - MS Excel (Intermediate) | KarirNex (Feb 2026)[cite: 1]</li>
+                        <li>📊 Mini Bootcamp MS Excel & SQL | Komunitas Excel Indonesia (Feb 2026)[cite: 1]</li>
+                        <li>💼 Penerima Bantuan Modal Program Mahasiswa Wirausaha (PMW) Polines (Sep 2025)[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="py-20 bg-secondary text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Mari Terhubung Bersama Saya</h2>
+            <p class="text-slate-400 mb-8">Terbuka untuk kesempatan berkarir, diskusi proyek, atau kolaborasi di bidang keuangan dan perpajakan.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6 mb-10">
+                <a href="mailto:ekafanana@gmail.com" class="flex items-center gap-3 bg-slate-800 px-6 py-3 rounded-xl border border-slate-700 hover:border-primary transition">
+                    <i class="fa-solid fa-envelope text-primary"></i> ekafanana@gmail.com[cite: 1]
                 </a>
-                <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-medium transition shadow-sm border border-slate-700">
-                    <i class="fa-brands fa-linkedin mr-2 text-teal-400"></i> LinkedIn
+                <a href="tel:+6289629969948" class="flex items-center gap-3 bg-slate-800 px-6 py-3 rounded-xl border border-slate-700 hover:border-primary transition">
+                    <i class="fa-solid fa-phone text-primary"></i> +62 896-2996-9948[cite: 1]
+                </a>
+                <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="flex items-center gap-3 bg-slate-800 px-6 py-3 rounded-xl border border-slate-700 hover:border-primary transition">
+                    <i class="fa-brands fa-linkedin text-primary"></i> LinkedIn Profile[cite: 1]
                 </a>
             </div>
-        </section>
 
-    </main>
+            <p class="text-xs text-slate-500">Semarang, Jawa Tengah[cite: 1] • &copy; 2026 Fahmi Muhamad Eka Nugraha</p>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-corporate-900 text-slate-500 py-8 text-center text-xs border-t border-slate-800">
-        <p>&copy; 2026 Fahmi Muhamad Eka Nugraha. All rights reserved.</p>
-    </footer>
-
-    <!-- Script Mobile Menu -->
-    <script>
-        const btn = document.getElementById('menu-btn');
-        const menu = document.getElementById('mobile-menu');
-
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
 </body>
 </html>
