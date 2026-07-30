@@ -1,282 +1,629 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fahmi Muhamad Eka Nugraha - Portofolio Profesional</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome untuk Ikon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1e40af', // Blue 800
-                        secondary: '#0f172a', // Slate 900
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fahmi Muhamad Eka Nugraha — Portofolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#0a1826;
+    --navy-900:#0f2135;
+    --navy-800:#16304a;
+    --paper:#eeefe6;
+    --paper-dim:#e4e5d9;
+    --ink:#152029;
+    --ink-soft:#4a5560;
+    --emerald:#1f7a5c;
+    --emerald-deep:#154f3c;
+    --gold:#c6a15b;
+    --rule: rgba(21,32,41,0.16);
+    --rule-light: rgba(238,239,230,0.22);
+    --max: 1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .display{font-family:'Fraunces', serif;}
+
+  /* ---- perforation / tear divider (signature element) ---- */
+  .tear{
+    position:relative;
+    height:28px;
+    background:
+      radial-gradient(circle 5px at 24px 0, transparent 5px, var(--paper) 5.5px) repeat-x,
+      var(--paper);
+    background-size:32px 100%;
+  }
+  .tear::before{
+    content:"";
+    position:absolute; left:0; right:0; top:0;
+    border-top:1px dashed var(--rule);
+  }
+  .tear.on-dark{
+    background:
+      radial-gradient(circle 5px at 24px 0, transparent 5px, var(--navy-950) 5.5px) repeat-x,
+      var(--navy-950);
+  }
+  .tear.on-dark::before{border-top-color:var(--rule-light);}
+
+  /* ---- nav ---- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(238,239,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:14px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-family:'IBM Plex Mono'; font-size:13px; letter-spacing:.04em; text-decoration:none;}
+  .brand .mark{
+    width:30px; height:30px; border-radius:3px;
+    background:var(--emerald-deep); color:var(--paper);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces'; font-weight:600; font-size:13px;
+  }
+  nav.links{display:flex; gap:26px; font-size:13px; font-family:'IBM Plex Mono'; letter-spacing:.03em;}
+  nav.links a{text-decoration:none; color:var(--ink-soft); position:relative; padding:4px 0;}
+  nav.links a:hover, nav.links a:focus-visible{color:var(--emerald-deep);}
+  nav.links a:focus-visible{outline:2px solid var(--emerald); outline-offset:3px; border-radius:2px;}
+  .nav-cta{
+    font-family:'IBM Plex Mono'; font-size:12.5px; text-decoration:none;
+    border:1px solid var(--ink); padding:7px 14px; border-radius:2px;
+    transition:background .2s, color .2s;
+  }
+  .nav-cta:hover{background:var(--ink); color:var(--paper);}
+  .burger{display:none; background:none; border:1px solid var(--rule); border-radius:3px; padding:8px 10px; cursor:pointer;}
+  @media (max-width: 760px){
+    nav.links{display:none;}
+    .nav-cta{display:none;}
+    .burger{display:block;}
+    .nav-inner.open ~ .mobile-links{display:flex;}
+  }
+  .mobile-links{display:none; flex-direction:column; gap:2px; padding:0 24px 16px; font-family:'IBM Plex Mono'; font-size:14px;}
+  .mobile-links a{text-decoration:none; color:var(--ink); padding:10px 0; border-bottom:1px solid var(--rule);}
+  .mobile-links.show{display:flex;}
+
+  /* ---- hero / statement header ---- */
+  .statement{
+    background:
+      linear-gradient(180deg, var(--navy-950), var(--navy-900) 60%, var(--navy-800));
+    color:var(--paper);
+    padding:64px 24px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .statement::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(180deg, rgba(238,239,230,0.035) 0 1px, transparent 1px 34px);
+    pointer-events:none;
+  }
+  .statement-inner{max-width:var(--max); margin:0 auto; position:relative;}
+  .eyebrow-row{
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px;
+    font-family:'IBM Plex Mono'; font-size:12.5px; letter-spacing:.08em; color:#9fb3bf;
+    padding-bottom:22px; border-bottom:1px solid var(--rule-light);
+    opacity:0; transform:translateY(8px); animation:rise .7s ease forwards;
+  }
+  .hero-main{
+    padding:34px 0 30px;
+    display:grid; grid-template-columns:1fr auto; gap:32px; align-items:end;
+  }
+  @media (max-width:700px){ .hero-main{grid-template-columns:1fr;} }
+  .hero-title{
+    font-family:'Fraunces'; font-weight:600; font-size:clamp(2.1rem, 5.4vw, 3.6rem);
+    line-height:1.05; margin:0 0 14px;
+    opacity:0; transform:translateY(10px); animation:rise .8s ease .1s forwards;
+  }
+  .hero-title .role{
+    display:block; font-style:italic; font-weight:400; font-size:0.42em; color:var(--gold); margin-top:10px; letter-spacing:.01em;
+  }
+  .hero-desc{
+    max-width:52ch; color:#c8d2d6; font-size:15.5px;
+    opacity:0; transform:translateY(10px); animation:rise .8s ease .22s forwards;
+  }
+  .avatar-mono{
+    width:112px; height:112px; border-radius:6px;
+    background:linear-gradient(155deg, var(--emerald), var(--emerald-deep));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces'; font-weight:600; font-size:2.4rem; color:var(--paper);
+    border:1px solid rgba(238,239,230,0.25);
+    flex-shrink:0;
+    opacity:0; transform:translateY(10px); animation:rise .8s ease .1s forwards;
+  }
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+
+  /* balance / stats ledger row */
+  .balance-strip{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--rule-light);
+    opacity:0; animation:rise .8s ease .32s forwards;
+  }
+  @media (max-width:700px){ .balance-strip{grid-template-columns:repeat(2,1fr);} }
+  .balance-cell{
+    padding:20px 18px 26px; border-right:1px solid var(--rule-light);
+  }
+  .balance-cell:last-child{border-right:none;}
+  .balance-num{font-family:'IBM Plex Mono'; font-weight:600; font-size:1.65rem; color:var(--gold);}
+  .balance-label{font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:.05em; color:#9fb3bf; margin-top:4px; text-transform:uppercase;}
+
+  /* ---- section shell ---- */
+  section{max-width:var(--max); margin:0 auto; padding:56px 24px;}
+  .sec-head{
+    display:flex; align-items:baseline; gap:14px; margin-bottom:30px;
+    border-bottom:2px solid var(--ink); padding-bottom:12px;
+  }
+  .sec-num{font-family:'IBM Plex Mono'; font-size:12px; color:var(--emerald-deep); letter-spacing:.05em;}
+  .sec-title{font-family:'Fraunces'; font-weight:600; font-size:1.7rem; margin:0;}
+
+  /* ---- ledger entries (experience) ---- */
+  .ledger-entry{
+    display:grid; grid-template-columns:130px 1fr auto; gap:20px;
+    padding:20px 0; border-bottom:1px solid var(--rule);
+    align-items:start;
+  }
+  @media (max-width:680px){
+    .ledger-entry{grid-template-columns:1fr; gap:6px;}
+  }
+  .ledger-date{font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--ink-soft); padding-top:3px;}
+  .ledger-body h3{font-family:'Fraunces'; font-size:1.18rem; font-weight:600; margin:0 0 2px;}
+  .ledger-body .place{font-family:'IBM Plex Mono'; font-size:12px; color:var(--emerald-deep); margin-bottom:10px;}
+  .ledger-body ul{margin:0; padding-left:18px; color:var(--ink-soft); font-size:14.5px;}
+  .ledger-body li{margin-bottom:6px;}
+  .ledger-tag{
+    font-family:'IBM Plex Mono'; font-size:12px; font-weight:600;
+    background:var(--emerald-deep); color:var(--paper);
+    padding:5px 10px; border-radius:3px; white-space:nowrap; height:fit-content;
+  }
+  @media (max-width:680px){ .ledger-tag{margin-top:6px;} }
+
+  /* ---- education cards ---- */
+  .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media (max-width:700px){ .edu-grid{grid-template-columns:1fr;} }
+  .edu-card{
+    border:1px solid var(--rule); border-radius:4px; padding:22px;
+    background:var(--paper-dim); position:relative;
+  }
+  .edu-card::before{
+    content:""; position:absolute; left:0; top:0; bottom:0; width:4px;
+    background:var(--gold); border-radius:4px 0 0 4px;
+  }
+  .edu-period{font-family:'IBM Plex Mono'; font-size:12px; color:var(--emerald-deep);}
+  .edu-card h3{font-family:'Fraunces'; margin:6px 0 2px; font-size:1.15rem;}
+  .edu-place{font-size:13px; color:var(--ink-soft); margin-bottom:12px;}
+  .edu-card ul{margin:0; padding-left:18px; font-size:14px; color:var(--ink-soft);}
+  .edu-card li{margin-bottom:5px;}
+
+  /* ---- achievements: credit list ---- */
+  .credit-list{display:flex; flex-direction:column;}
+  .credit-row{
+    display:grid; grid-template-columns:44px 1fr auto; align-items:center; gap:16px;
+    padding:16px 0; border-bottom:1px solid var(--rule);
+  }
+  .medal-icon{width:40px; height:40px;}
+  .credit-name{font-family:'Fraunces'; font-weight:600; font-size:1.02rem;}
+  .credit-org{font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); margin-top:2px;}
+  .credit-date{font-family:'IBM Plex Mono'; font-size:12.5px; color:var(--emerald-deep); text-align:right; white-space:nowrap;}
+
+  /* ---- organisasi timeline ---- */
+  .org-list{display:flex; flex-direction:column; gap:0;}
+  .org-item{
+    padding:18px 0; border-bottom:1px solid var(--rule);
+    display:grid; grid-template-columns:1fr; gap:4px;
+  }
+  .org-top{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;}
+  .org-role{font-family:'Fraunces'; font-weight:600; font-size:1.05rem;}
+  .org-org{font-family:'IBM Plex Mono'; font-size:12px; color:var(--emerald-deep);}
+  .org-period{font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft);}
+  .org-item ul{margin:8px 0 0; padding-left:18px; color:var(--ink-soft); font-size:14px;}
+  .org-item li{margin-bottom:5px;}
+
+  /* ---- certifications ---- */
+  .cert-list{list-style:none; margin:0; padding:0; display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:4px; overflow:hidden;}
+  .cert-list li{background:var(--paper); padding:14px 16px; display:flex; justify-content:space-between; gap:12px; font-size:14px; flex-wrap:wrap;}
+  .cert-list .c-name{font-weight:500;}
+  .cert-list .c-org{font-family:'IBM Plex Mono'; font-size:12px; color:var(--emerald-deep);}
+  .cert-list .c-date{font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft); white-space:nowrap;}
+
+  /* ---- skills / saldo kompetensi ---- */
+  .skill-block{margin-bottom:26px;}
+  .skill-block h4{font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-soft); margin:0 0 14px;}
+  .skill-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-tag{
+    font-family:'IBM Plex Mono'; font-size:12.5px; padding:7px 12px;
+    border:1px solid var(--rule); border-radius:3px; background:var(--paper-dim);
+  }
+  .lang-bar-wrap{margin-bottom:14px;}
+  .lang-top{display:flex; justify-content:space-between; font-size:13.5px; margin-bottom:5px;}
+  .lang-track{height:6px; background:var(--rule); border-radius:3px; overflow:hidden;}
+  .lang-fill{height:100%; background:var(--emerald); border-radius:3px; width:0; transition:width 1.1s ease;}
+
+  /* ---- footer / contact ---- */
+  footer{
+    background:var(--navy-950); color:var(--paper); padding:56px 24px 34px;
+  }
+  .footer-inner{max-width:var(--max); margin:0 auto;}
+  .footer-top{display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:24px; margin-bottom:36px;}
+  .footer-title{font-family:'Fraunces'; font-size:1.9rem; font-weight:600; max-width:16ch; margin:0;}
+  .footer-links{display:flex; flex-direction:column; gap:10px; font-family:'IBM Plex Mono'; font-size:13.5px;}
+  .footer-links a{text-decoration:none; color:#c8d2d6; border-bottom:1px solid transparent;}
+  .footer-links a:hover{color:var(--gold); border-color:var(--gold);}
+  .footer-bottom{border-top:1px solid var(--rule-light); padding-top:18px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:'IBM Plex Mono'; font-size:11.5px; color:#7f909b;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  ::selection{background:var(--gold); color:var(--navy-950);}
+  :focus-visible{outline:2px solid var(--emerald); outline-offset:2px;}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+<body>
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold text-primary tracking-wide">Fahmi Muhamad Eka Nugraha</a>
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="#tentang" class="hover:text-primary transition">Tentang</a>
-                <a href="#pengalaman" class="hover:text-primary transition">Pengalaman</a>
-                <a href="#pendidikan" class="hover:text-primary transition">Pendidikan</a>
-                <a href="#organisasi" class="hover:text-primary transition">Organisasi</a>
-                <a href="#prestasi" class="hover:text-primary transition">Prestasi & Sertifikasi</a>
-                <a href="#kontak" class="hover:text-primary transition">Kontak</a>
-            </nav>
-            <a href="#kontak" class="hidden md:inline-block bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow hover:bg-blue-900 transition">Hubungi Saya</a>
-        </div>
-    </header>
+<header class="nav">
+  <div class="nav-inner" id="navInner">
+    <a href="#top" class="brand"><span class="mark">F</span>FAHMI · PORTOFOLIO</a>
+    <nav class="links">
+      <a href="#profil">Profil</a>
+      <a href="#pengalaman">Pengalaman</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#pencapaian">Pencapaian</a>
+      <a href="#organisasi">Organisasi</a>
+      <a href="#kemampuan">Kemampuan</a>
+    </nav>
+    <a href="mailto:ekafanana@gmail.com" class="nav-cta">Hubungi Saya</a>
+    <button class="burger" id="burgerBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
+  </div>
+  <div class="mobile-links" id="mobileLinks">
+    <a href="#profil">Profil</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#pendidikan">Pendidikan</a>
+    <a href="#pencapaian">Pencapaian</a>
+    <a href="#organisasi">Organisasi</a>
+    <a href="#kemampuan">Kemampuan</a>
+    <a href="mailto:ekafanana@gmail.com">Hubungi Saya</a>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 md:pt-40 md:h-screen flex items-center bg-gradient-to-br from-blue-50 via-slate-50 to-white">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="inline-block bg-blue-100 text-primary text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">Mahasiswa S.Tr. Akuntansi Manajerial</span>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-secondary tracking-tight mb-6">
-                    Halo, Saya <span class="text-primary">Fahmi Muhamad Eka</span>
-                </h1>
-                <p class="text-lg text-slate-600 mb-8">
-                    Mahasiswa semester 5 dengan pengalaman magang di perbankan. Terampil dalam analisis data, serta berpengalaman memimpin organisasi berskala 55 anggota[cite: 1]. Berkomitmen mengembangkan karier di bidang keuangan perbankan dan perpajakan[cite: 1].
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#kontak" class="bg-primary text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-blue-900 transition flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane"></i> Hubungi Saya
-                    </a>
-                    <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl shadow-sm hover:bg-slate-100 transition flex items-center gap-2">
-                        <i class="fa-brands fa-linkedin text-blue-600"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-            <div class="flex justify-center">
-                <div class="relative w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
-                    <!-- Foto Profil -->
-                    <img src="PAS FOTO.jpg" alt="Fahmi Muhamad Eka Nugraha" class="w-full h-full object-cover">
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="statement" id="top">
+  <div class="statement-inner">
+    <div class="eyebrow-row">
+      <span>NO. PORTOFOLIO — FMEN/2026/01</span>
+      <span>SEMARANG, JAWA TENGAH, ID</span>
+    </div>
+    <div class="hero-main">
+      <div>
+        <h1 class="hero-title">Fahmi Muhamad<br>Eka Nugraha
+          <span class="role">Akuntansi · Perbankan · Perpajakan</span>
+        </h1>
+        <p class="hero-desc">Mahasiswa S.Tr. Akuntansi Manajerial semester 5 dengan pengalaman magang di perbankan. Terampil menganalisis data menggunakan Excel, serta berpengalaman memimpin organisasi berskala 55 anggota. Berkomitmen mengembangkan karier di bidang keuangan perbankan dan perpajakan.</p>
+      </div>
+      <div class="avatar-mono" aria-hidden="true">FN</div>
+    </div>
+    <div class="balance-strip">
+      <div class="balance-cell">
+        <div class="balance-num mono">3,67</div>
+        <div class="balance-label">IPK Akuntansi Manajerial</div>
+      </div>
+      <div class="balance-cell">
+        <div class="balance-num mono">20+</div>
+        <div class="balance-label">Rekening diproses, akurasi 100%</div>
+      </div>
+      <div class="balance-cell">
+        <div class="balance-num mono">55</div>
+        <div class="balance-label">Anggota dipimpin, 6 divisi</div>
+      </div>
+      <div class="balance-cell">
+        <div class="balance-num mono">4</div>
+        <div class="balance-label">Medali kompetisi nasional</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="tear on-dark"></div>
 
-    <!-- Tentang & Keahlian -->
-    <section id="tentang" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-secondary">Tentang & Keahlian</h2>
-                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
-            </div>
+<section id="profil">
+  <div class="sec-head"><span class="sec-num mono">01</span><h2 class="sec-title">Profil</h2></div>
+  <div class="reveal" style="max-width:70ch; font-size:15.5px; color:var(--ink-soft);">
+    <p>Fahmi adalah mahasiswa Akuntansi Manajerial di Politeknik Negeri Semarang dengan rekam jejak nyata di dunia perbankan — mulai dari praktik kerja lapangan yang memproses pembukaan rekening nasabah dengan tingkat akurasi sempurna, hingga memimpin organisasi kemahasiswaan beranggotakan puluhan orang. Kombinasi ketelitian administratif, kemampuan analisis data, dan pengalaman kepemimpinan menjadikannya siap berkontribusi di bidang keuangan, perbankan, maupun perpajakan.</p>
+  </div>
+  <div class="reveal" style="margin-top:18px; display:flex; gap:22px; flex-wrap:wrap; font-family:'IBM Plex Mono'; font-size:13px; color:var(--ink-soft);">
+    <span>✉ ekafanana@gmail.com</span>
+    <span>☎ +62 896-2996-9948</span>
+    <span>in linkedin.com/in/fahmimuhamadekanugraha</span>
+  </div>
+</section>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Keterampilan Teknis -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
-                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3">Keterampilan Teknis</h3>
-                    <p class="text-sm text-slate-600 mb-4">Accounting, General Ledgers, Financial Reporting, Bookkeeping, Perencanaan Anggaran, Accurate Online, MYOB, Microsoft Excel, Microsoft Word, Microsoft Office Suite[cite: 1].</p>
-                </div>
+<div class="tear"></div>
 
-                <!-- Keterampilan Sosial -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
-                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3">Keterampilan Sosial</h3>
-                    <p class="text-sm text-slate-600 mb-4">Kepemimpinan, Analisis & Pemecahan Masalah, Komunikasi & Interpersonal, Kerjasama Tim, Time Management[cite: 1].</p>
-                </div>
+<section id="pengalaman">
+  <div class="sec-head"><span class="sec-num mono">02</span><h2 class="sec-title">Pengalaman Profesional</h2></div>
 
-                <!-- Minat & Bahasa -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
-                    <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-secondary mb-3">Minat & Bahasa</h3>
-                    <p class="text-sm text-slate-600 mb-2"><strong>Minat:</strong> Akuntansi Keuangan, Perbankan, Perpajakan, Analisis Data, Audit Internal[cite: 1].</p>
-                    <p class="text-sm text-slate-600"><strong>Bahasa:</strong> Bahasa Indonesia (Penutur Asli), Bahasa Inggris (Tingkat Dasar)[cite: 1].</p>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="ledger-entry reveal">
+    <div class="ledger-date mono">MEI — JUN 2024</div>
+    <div class="ledger-body">
+      <h3>Tour Leader — Freelance</h3>
+      <div class="place">Farhah Group (Tour and Travel), Tangerang, Banten</div>
+      <ul>
+        <li>Mengoordinasikan 5+ perjalanan wisata untuk kelompok 100–250 peserta, meliputi persiapan melalui meeting, pengecekan rundown, serta koordinasi kebutuhan operasional tour.</li>
+        <li>Bertanggung jawab terhadap peserta selama perjalanan, termasuk komunikasi dengan tamu, tim operasional, dan vendor.</li>
+        <li>Mengelola logistik dan administrasi peserta seperti konsumsi, penginapan, pembagian kamar, absensi, serta pengaturan kegiatan sesuai itinerary.</li>
+      </ul>
+    </div>
+    <div class="ledger-tag">5+ TRIP</div>
+  </div>
 
-    <!-- Pengalaman Profesional -->
-    <section id="pengalaman" class="py-20 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-secondary">Pengalaman Profesional</h2>
-                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
-            </div>
+  <div class="ledger-entry reveal">
+    <div class="ledger-date mono">NOV 2023 — JAN 2024</div>
+    <div class="ledger-body">
+      <h3>Praktik Kerja Lapangan</h3>
+      <div class="place">Bank Woori Saudara KCP Singaparna, Kab. Tasikmalaya, Jawa Barat</div>
+      <ul>
+        <li>Memproses 20+ pembukaan rekening baru selama 3 bulan masa magang, meliputi pengisian formulir dan verifikasi kelengkapan dokumen sesuai SOP bank, dengan akurasi 100% tanpa kesalahan administrasi.</li>
+        <li>Mendampingi dan melayani 20+ nasabah dalam proses administrasi pembukaan rekening hingga aktivasi.</li>
+        <li>Mengelola dan mengarsipkan dokumen nasabah (pinjaman & pembukaan rekening) secara sistematis dan terstruktur.</li>
+      </ul>
+    </div>
+    <div class="ledger-tag">100% AKURASI</div>
+  </div>
+</section>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Farhah Group -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">Mei - Juni 2024</span>
-                    <h3 class="text-xl font-bold text-secondary mt-3">Tour Leader - Freelance</h3>
-                    <p class="text-sm font-medium text-slate-500 mb-4">Farhah Group (Tour and Travel) • Tanggerang, Banten[cite: 1]</p>
-                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Mengoordinasikan 5+ perjalanan wisata untuk kelompok 100-250 peserta, meliputi persiapan meeting, pengecekan rundown, dan koordinasi operasional[cite: 1].</li>
-                        <li>Bertanggung jawab terhadap peserta selama perjalanan dan komunikasi dengan vendor[cite: 1].</li>
-                        <li>Mengelola logistik dan administrasi peserta (konsumsi, penginapan, pembagian kamar, absensi)[cite: 1].</li>
-                    </ul>
-                </div>
+<div class="tear"></div>
 
-                <!-- Bank Woori Saudara -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">Nov 2023 - Jan 2024</span>
-                    <h3 class="text-xl font-bold text-secondary mt-3">Praktik Kerja Lapangan (PKL)</h3>
-                    <p class="text-sm font-medium text-slate-500 mb-4">Bank Woori Saudara KCP Singaparna • Tasikmalaya, Jawa Barat[cite: 1]</p>
-                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Memproses 20+ pembukaan rekening baru selama 3 bulan magang sesuai SOP dengan tingkat akurasi 100% tanpa kesalahan[cite: 1].</li>
-                        <li>Mendampingi dan melayani 20+ nasabah dalam proses administrasi hingga aktivasi produk perbankan[cite: 1].</li>
-                        <li>Mengelola dan mengarsipkan dokumen nasabah (pinjaman & pembukaan rekening) secara sistematis[cite: 1].</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="pendidikan">
+  <div class="sec-head"><span class="sec-num mono">03</span><h2 class="sec-title">Pendidikan</h2></div>
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-period mono">2024 — 2028</div>
+      <h3>S.Tr. Akuntansi Manajerial</h3>
+      <div class="edu-place">Politeknik Negeri Semarang, Jawa Tengah</div>
+      <ul>
+        <li>IPK: 3,67</li>
+        <li>Penerima Manfaat KIP-K</li>
+        <li>Lolos Pendanaan Program Mahasiswa Wirausaha (PMW) 2025</li>
+      </ul>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-period mono">2021 — 2024</div>
+      <h3>Perbankan Keuangan Mikro</h3>
+      <div class="edu-place">SMKN Parungponteng, Kab. Tasikmalaya, Jawa Barat</div>
+      <ul>
+        <li>Nilai akhir: 85,50</li>
+        <li>Peringkat 3 Paralel Jurusan Perbankan</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- Pendidikan -->
-    <section id="pendidikan" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-secondary">Pendidikan</h2>
-                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
-            </div>
+<div class="tear"></div>
 
-            <div class="max-w-3xl mx-auto space-y-6">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center">
-                    <div>
-                        <h3 class="text-lg font-bold text-secondary">S.Tr. Akuntansi Manajerial</h3>
-                        <p class="text-sm text-slate-600">Politeknik Negeri Semarang (Semarang, Jawa Tengah)[cite: 1]</p>
-                        <p class="text-xs text-primary font-semibold mt-1">IPK: 3,67 | Penerima Manfaat KIP-K | Lolos Pendanaan PMW 2025[cite: 1]</p>
-                    </div>
-                    <span class="mt-2 md:mt-0 text-sm font-bold text-slate-500">2024 - 2028[cite: 1]</span>
-                </div>
+<section id="pencapaian">
+  <div class="sec-head"><span class="sec-num mono">04</span><h2 class="sec-title">Pencapaian</h2></div>
+  <div class="credit-list">
+    <div class="credit-row reveal">
+      <svg class="medal-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="none" stroke="#c6a15b" stroke-width="3"/><circle cx="20" cy="20" r="7" fill="#c6a15b"/><path d="M20 3 L15 13 L25 13 Z" fill="#c6a15b"/></svg>
+      <div>
+        <div class="credit-name">Medali Perak — Isaac Newton Competition (INC) 2025</div>
+        <div class="credit-org">IPB University & LBPN</div>
+      </div>
+      <div class="credit-date">JUL 2025</div>
+    </div>
+    <div class="credit-row reveal">
+      <svg class="medal-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="none" stroke="#8a5a2e" stroke-width="3"/><circle cx="20" cy="20" r="7" fill="#8a5a2e"/><path d="M20 3 L15 13 L25 13 Z" fill="#8a5a2e"/></svg>
+      <div>
+        <div class="credit-name">Medali Perunggu — Islamic Science Competition (ISC) 2025</div>
+        <div class="credit-org">POSI</div>
+      </div>
+      <div class="credit-date">MEI 2025</div>
+    </div>
+    <div class="credit-row reveal">
+      <svg class="medal-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="none" stroke="#c6a15b" stroke-width="3"/><circle cx="20" cy="20" r="7" fill="#c6a15b"/><path d="M20 3 L15 13 L25 13 Z" fill="#c6a15b"/></svg>
+      <div>
+        <div class="credit-name">Medali Perak — Olimpiade Nasional Prestasi Akademik (ONPA)</div>
+        <div class="credit-org">LPCI</div>
+      </div>
+      <div class="credit-date">DES 2023</div>
+    </div>
+    <div class="credit-row reveal">
+      <svg class="medal-icon" viewBox="0 0 40 40"><circle cx="20" cy="20" r="13" fill="none" stroke="#1f7a5c" stroke-width="3"/><circle cx="20" cy="20" r="7" fill="#1f7a5c"/><path d="M20 3 L15 13 L25 13 Z" fill="#1f7a5c"/></svg>
+      <div>
+        <div class="credit-name">Medali Emas — Olimpiade Sains Pelajar Nasional (OSPN)</div>
+        <div class="credit-org">LPCI</div>
+      </div>
+      <div class="credit-date">JUN 2023</div>
+    </div>
+  </div>
+</section>
 
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col md:flex-row justify-between items-start md:items-center">
-                    <div>
-                        <h3 class="text-lg font-bold text-secondary">Perbankan Keuangan Mikro</h3>
-                        <p class="text-sm text-slate-600">SMKN Parungponteng (Tasikmalaya, Jawa Barat)[cite: 1]</p>
-                        <p class="text-xs text-primary font-semibold mt-1">Nilai: 85,50 | Peringkat 3 Paralel Jurusan[cite: 1]</p>
-                    </div>
-                    <span class="mt-2 md:mt-0 text-sm font-bold text-slate-500">2021 - 2024[cite: 1]</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="tear"></div>
 
-    <!-- Organisasi & Kegiatan -->
-    <section id="organisasi" class="py-20 bg-slate-50">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-secondary">Organisasi & Kegiatan</h2>
-                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
-            </div>
+<section id="organisasi">
+  <div class="sec-head"><span class="sec-num mono">05</span><h2 class="sec-title">Organisasi &amp; Kegiatan</h2></div>
+  <div class="org-list">
+    <div class="org-item reveal">
+      <div class="org-top">
+        <span class="org-role">Satuan Tugas — PPKPT POLINES</span>
+        <span class="org-period mono">2026 — 2028</span>
+      </div>
+      <span class="org-org">Semarang, Jawa Tengah</span>
+      <ul>
+        <li>Mengelola media sosial dan layanan komunikasi resmi PPKPT, termasuk WhatsApp, untuk penyebaran informasi, edukasi, serta respons pertanyaan dan pengaduan.</li>
+        <li>Menerima, mendokumentasikan, dan mengadministrasikan laporan yang masuk melalui kanal daring sesuai prosedur.</li>
+        <li>Mengoordinasikan proses penanganan laporan, termasuk penjadwalan pertemuan dan dukungan administrasi kasus.</li>
+      </ul>
+    </div>
+    <div class="org-item reveal">
+      <div class="org-top">
+        <span class="org-role">Ketua Umum — KAMADIKSI POLINES</span>
+        <span class="org-period mono">2025 — 2026</span>
+      </div>
+      <span class="org-org">Semarang, Jawa Tengah</span>
+      <ul>
+        <li>Memimpin organisasi dengan 55 anggota dan 6 divisi serta mengoordinasikan 21 program kerja agar berjalan sesuai timeline dan target.</li>
+        <li>Mengelola komunikasi dengan sponsor dan stakeholder untuk mendukung pendanaan dan keberlangsungan kegiatan.</li>
+        <li>Menyusun dan menerapkan SOP peminjaman dana untuk meningkatkan transparansi dan akuntabilitas keuangan organisasi.</li>
+      </ul>
+    </div>
+    <div class="org-item reveal">
+      <div class="org-top">
+        <span class="org-role">Satuan Tugas — Tax Center Polines</span>
+        <span class="org-period mono">2025 — 2026</span>
+      </div>
+      <span class="org-org">Semarang, Jawa Tengah</span>
+      <ul>
+        <li>Berperan sebagai MC dan panitia Lomba Cerdas Cermat Perpajakan tingkat nasional (69 sekolah, 11 provinsi).</li>
+        <li>Mengawal seluruh rangkaian acara dari Technical Meeting hingga Final sesuai rundown.</li>
+        <li>Berkoordinasi dengan tim pelaksana, dewan juri, dan instansi terkait; berperan sebagai orator dalam video edukasi perpajakan.</li>
+      </ul>
+    </div>
+    <div class="org-item reveal">
+      <div class="org-top">
+        <span class="org-role">Ketua OSIS — SMKN Parungponteng</span>
+        <span class="org-period mono">2023 — 2024</span>
+      </div>
+      <span class="org-org">Kab. Tasikmalaya, Jawa Barat</span>
+      <ul>
+        <li>Memimpin organisasi siswa dan mengoordinasikan pelaksanaan program kerja sekolah selama satu periode kepengurusan.</li>
+        <li>Menginisiasi, merencanakan, dan mengawasi kegiatan sekolah berkolaborasi dengan guru dan pengurus OSIS.</li>
+        <li>Mengembangkan kemampuan kepemimpinan, komunikasi, pengambilan keputusan, dan koordinasi tim.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Kamadiksi Polines -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2025 - 2026[cite: 1]</span>
-                    <h3 class="text-xl font-bold text-secondary mt-2">Ketua Umum</h3>
-                    <p class="text-sm font-medium text-slate-500 mb-4">KAMADIKSI POLINES, Semarang[cite: 1]</p>
-                    <p class="text-sm text-slate-600">Memimpin organisasi dengan 55 anggota dan 6 divisi serta mengoordinasikan 21 program kerja. Mengelola komunikasi sponsor dan menyusun SOP peminjaman dana[cite: 1].</p>
-                </div>
+<div class="tear"></div>
 
-                <!-- OSIS SMKN Parungponteng -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2023 - 2024[cite: 1]</span>
-                    <h3 class="text-xl font-bold text-secondary mt-2">Ketua OSIS</h3>
-                    <p class="text-sm font-medium text-slate-500 mb-4">OSIS SMKN Parungponteng, Tasikmalaya[cite: 1]</p>
-                    <p class="text-sm text-slate-600">Memimpin organisasi siswa, mengoordinasikan pengurus dan pelaksanaan program kerja sekolah, serta berkolaborasi bersama guru dan siswa[cite: 1].</p>
-                </div>
+<section id="sertifikasi">
+  <div class="sec-head"><span class="sec-num mono">06</span><h2 class="sec-title">Lisensi &amp; Sertifikasi</h2></div>
+  <ul class="cert-list reveal">
+    <li><span class="c-name">Accurate Online Training</span><span class="c-org">Sekolah Pajak</span><span class="c-date">JUL 2026</span></li>
+    <li><span class="c-name">Intensive Bootcamp 2 Weeks — MS Excel (Intermediate)</span><span class="c-org">KarirNex</span><span class="c-date">FEB 2026</span></li>
+    <li><span class="c-name">Mini Bootcamp MS Excel &amp; SQL</span><span class="c-org">Komunitas Excel Indonesia</span><span class="c-date">FEB 2026</span></li>
+    <li><span class="c-name">Penerima Bantuan Modal — Program Mahasiswa Wirausaha (PMW)</span><span class="c-org">Politeknik Negeri Semarang</span><span class="c-date">SEP 2025</span></li>
+    <li><span class="c-name">Moderator — Sambut Mahasiswa Baru &amp; Seminar KIP-K POLINES 2025</span><span class="c-org">Kamadiksi Polines</span><span class="c-date">DES 2025</span></li>
+  </ul>
+</section>
 
-                <!-- PPKPT Polines -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2026 - 2028[cite: 1]</span>
-                    <h3 class="text-xl font-bold text-secondary mt-2">Satuan Tugas</h3>
-                    <p class="text-sm font-medium text-slate-500 mb-4">PPKPT POLINES, Semarang[cite: 1]</p>
-                    <p class="text-sm text-slate-600">Mengelola media sosial dan layanan komunikasi resmi, serta menerima, mendokumentasikan, dan mengadministrasikan laporan yang masuk[cite: 1].</p>
-                </div>
+<div class="tear"></div>
 
-                <!-- Tax Center Polines -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                    <span class="text-xs font-semibold text-primary bg-blue-50 px-3 py-1 rounded-full">2025 - 2026[cite: 1]</span>
-                    <h3 class="text-xl font-bold text-secondary mt-2">Satuan Tugas</h3>
-                    <p class="text-sm font-medium text-slate-500 mb-4">Tax Center Polines, Semarang[cite: 1]</p>
-                    <p class="text-sm text-slate-600">Berperan sebagai MC dan panitia Lomba Cerdas Cermat Perpajakan tingkat nasional (69 sekolah, 11 provinsi) serta orator video edukasi[cite: 1].</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="kemampuan">
+  <div class="sec-head"><span class="sec-num mono">07</span><h2 class="sec-title">Kemampuan</h2></div>
 
-    <!-- Prestasi & Sertifikasi -->
-    <section id="prestasi" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-secondary">Prestasi & Lisensi</h2>
-                <div class="w-16 h-1 bg-primary mx-auto mt-3 rounded-full"></div>
-            </div>
+  <div class="skill-block reveal">
+    <h4>Keterampilan Teknis</h4>
+    <div class="skill-tags">
+      <span class="skill-tag">Accounting</span><span class="skill-tag">General Ledgers</span>
+      <span class="skill-tag">Financial Reporting</span><span class="skill-tag">Bookkeeping</span>
+      <span class="skill-tag">Perencanaan Anggaran</span><span class="skill-tag">Accurate Online</span>
+      <span class="skill-tag">MYOB</span><span class="skill-tag">Microsoft Excel</span>
+      <span class="skill-tag">Microsoft Word</span><span class="skill-tag">Microsoft Office Suite</span>
+    </div>
+  </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Prestasi -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <h3 class="text-xl font-bold text-secondary mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-trophy text-amber-500"></i> Pencapaian & Medali
-                    </h3>
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li>🥈 <strong>Medali Perak</strong> - Isaac Newton Competition (INC) 2025 | IPB University & LBPN (Jul 2025)[cite: 1]</li>
-                        <li>🥉 <strong>Medali Perunggu</strong> - Islamic Science Competition (ISC) 2025 | POSI (Mei 2025)[cite: 1]</li>
-                        <li>🥈 <strong>Medali Perak</strong> - Olimpiade Nasional Prestasi Akademik (ONPA) | LPCI (Des 2023)[cite: 1]</li>
-                        <li>🥇 <strong>Medali Emas</strong> - Olimpiade Sains Pelajar Nasional (OSPN) | LPCI (Jun 2023)[cite: 1]</li>
-                    </ul>
-                </div>
+  <div class="skill-block reveal">
+    <h4>Keterampilan Sosial</h4>
+    <div class="skill-tags">
+      <span class="skill-tag">Kepemimpinan</span><span class="skill-tag">Analisis &amp; Pemecahan Masalah</span>
+      <span class="skill-tag">Komunikasi &amp; Interpersonal</span><span class="skill-tag">Kerjasama Tim</span>
+      <span class="skill-tag">Time Management</span>
+    </div>
+  </div>
 
-                <!-- Lisensi & Sertifikasi -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                    <h3 class="text-xl font-bold text-secondary mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-certificate text-blue-500"></i> Lisensi & Pelatihan
-                    </h3>
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li>📜 Accurate Online Training | Sekolah Pajak (Juli 2026)[cite: 1]</li>
-                        <li>💻 Intensive Bootcamp 2 Weeks - MS Excel (Intermediate) | KarirNex (Feb 2026)[cite: 1]</li>
-                        <li>📊 Mini Bootcamp MS Excel & SQL | Komunitas Excel Indonesia (Feb 2026)[cite: 1]</li>
-                        <li>💼 Penerima Bantuan Modal Program Mahasiswa Wirausaha (PMW) Polines (Sep 2025)[cite: 1]</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="skill-block reveal">
+    <h4>Minat</h4>
+    <div class="skill-tags">
+      <span class="skill-tag">Akuntansi Keuangan</span><span class="skill-tag">Perbankan</span>
+      <span class="skill-tag">Perpajakan</span><span class="skill-tag">Analisis Data</span>
+      <span class="skill-tag">Audit Internal</span><span class="skill-tag">Business Process Improvement</span>
+    </div>
+  </div>
 
-    <!-- Kontak -->
-    <section id="kontak" class="py-20 bg-secondary text-white">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Mari Terhubung Bersama Saya</h2>
-            <p class="text-slate-400 mb-8">Terbuka untuk kesempatan berkarir, diskusi proyek, atau kolaborasi di bidang keuangan dan perpajakan.</p>
-            
-            <div class="flex flex-wrap justify-center gap-6 mb-10">
-                <a href="mailto:ekafanana@gmail.com" class="flex items-center gap-3 bg-slate-800 px-6 py-3 rounded-xl border border-slate-700 hover:border-primary transition">
-                    <i class="fa-solid fa-envelope text-primary"></i> ekafanana@gmail.com[cite: 1]
-                </a>
-                <a href="tel:+6289629969948" class="flex items-center gap-3 bg-slate-800 px-6 py-3 rounded-xl border border-slate-700 hover:border-primary transition">
-                    <i class="fa-solid fa-phone text-primary"></i> +62 896-2996-9948[cite: 1]
-                </a>
-                <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" class="flex items-center gap-3 bg-slate-800 px-6 py-3 rounded-xl border border-slate-700 hover:border-primary transition">
-                    <i class="fa-brands fa-linkedin text-primary"></i> LinkedIn Profile[cite: 1]
-                </a>
-            </div>
+  <div class="skill-block reveal">
+    <h4>Bahasa</h4>
+    <div class="lang-bar-wrap">
+      <div class="lang-top"><span>Bahasa Indonesia</span><span class="mono">Penutur Asli</span></div>
+      <div class="lang-track"><div class="lang-fill" data-w="100"></div></div>
+    </div>
+    <div class="lang-bar-wrap">
+      <div class="lang-top"><span>Bahasa Inggris</span><span class="mono">Tingkat Dasar</span></div>
+      <div class="lang-track"><div class="lang-fill" data-w="35"></div></div>
+    </div>
+  </div>
+</section>
 
-            <p class="text-xs text-slate-500">Semarang, Jawa Tengah[cite: 1] • &copy; 2026 Fahmi Muhamad Eka Nugraha</p>
-        </div>
-    </section>
+<div class="tear on-dark"></div>
 
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <h2 class="footer-title">Mari berdiskusi peluang kerja sama.</h2>
+      <div class="footer-links">
+        <a href="mailto:ekafanana@gmail.com">ekafanana@gmail.com</a>
+        <a href="tel:+6289629969948">+62 896-2996-9948</a>
+        <a href="https://linkedin.com/in/fahmimuhamadekanugraha" target="_blank" rel="noopener">linkedin.com/in/fahmimuhamadekanugraha</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FAHMI MUHAMAD EKA NUGRAHA</span>
+      <span>SEMARANG, JAWA TENGAH, INDONESIA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const mobileLinks = document.getElementById('mobileLinks');
+  burger.addEventListener('click', () => {
+    const open = mobileLinks.classList.toggle('show');
+    burger.setAttribute('aria-expanded', open);
+  });
+  mobileLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileLinks.classList.remove('show');
+    burger.setAttribute('aria-expanded', 'false');
+  }));
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // language bars fill on view
+  const bars = document.querySelectorAll('.lang-fill');
+  const barIo = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.dataset.w + '%';
+        barIo.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  bars.forEach(b => barIo.observe(b));
+</script>
 </body>
 </html>
