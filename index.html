@@ -327,7 +327,8 @@
   .org-card li{margin-bottom:6px;}
 
   /* ---------- certifications ---------- */
-  .cert-grid{display:grid; grid-template-columns:1fr; gap:14px;}
+  .cert-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;}
+  @media (max-width:700px){ .cert-grid{grid-template-columns:1fr;} }
   .cert-card{
     background:var(--card); border-radius:var(--r-sm); padding:18px 22px; box-shadow:var(--shadow-sm), var(--inset-top);
     display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;
@@ -705,21 +706,61 @@
     <h2 class="sec-title">Lisensi &amp; Sertifikasi</h2>
   </div>
   <div class="cert-grid reveal">
-    <div class="cert-card">
-      <div><div class="cert-name">Accurate Online Training</div><div class="cert-org">Sekolah Pajak</div></div>
-      <span class="cert-date">Jul 2026</span>
+    <div class="cert-card-photo">
+      <div class="cert-photo-frame">
+        <img src="ac.jpg" alt="Sertifikat Accurate Online Training"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cert-photo-fallback">Foto sertifikat belum ditemukan — pastikan file "ac.jpg" satu folder dengan index.html</div>
+      </div>
+      <div class="cert-info">
+        <div>
+          <div class="cert-name">Accurate Online Training</div>
+          <div class="cert-org">Sekolah Pajak</div>
+        </div>
+        <span class="cert-date">Jul 2026</span>
+      </div>
     </div>
-    <div class="cert-card">
-      <div><div class="cert-name">Intensive Bootcamp 2 Weeks — MS Excel (Intermediate)</div><div class="cert-org">KarirNex</div></div>
-      <span class="cert-date">Feb 2026</span>
+    <div class="cert-card-photo">
+      <div class="cert-photo-frame">
+        <img src="Sertifikat Fahmi Muhamad Eka Nugraha Bootcamp Excel Batch 6 Karirnex_page-0001.jpg" alt="Sertifikat Intensive Bootcamp 2 Weeks — MS Excel (Intermediate)"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cert-photo-fallback">Foto sertifikat belum ditemukan — pastikan file "Sertifikat Fahmi Muhamad Eka Nugraha Bootcamp Excel Batch 6 Karirnex_page-0001.jpg" satu folder dengan index.html</div>
+      </div>
+      <div class="cert-info">
+        <div>
+          <div class="cert-name">Intensive Bootcamp 2 Weeks — MS Excel (Intermediate)</div>
+          <div class="cert-org">KarirNex</div>
+        </div>
+        <span class="cert-date">Feb 2026</span>
+      </div>
     </div>
-    <div class="cert-card">
-      <div><div class="cert-name">Mini Bootcamp MS Excel &amp; SQL</div><div class="cert-org">Komunitas Excel Indonesia</div></div>
-      <span class="cert-date">Feb 2026</span>
+    <div class="cert-card-photo">
+      <div class="cert-photo-frame">
+        <img src="kei.jpg" alt="Sertifikat Mini Bootcamp MS Excel & SQL"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cert-photo-fallback">Foto sertifikat belum ditemukan — pastikan file "kei.jpg" satu folder dengan index.html</div>
+      </div>
+      <div class="cert-info">
+        <div>
+          <div class="cert-name">Mini Bootcamp MS Excel &amp; SQL</div>
+          <div class="cert-org">Komunitas Excel Indonesia</div>
+        </div>
+        <span class="cert-date">Feb 2026</span>
+      </div>
     </div>
-    <div class="cert-card">
-      <div><div class="cert-name">Penerima Bantuan Modal — Program Mahasiswa Wirausaha (PMW)</div><div class="cert-org">Politeknik Negeri Semarang</div></div>
-      <span class="cert-date">Sep 2025</span>
+    <div class="cert-card-photo">
+      <div class="cert-photo-frame">
+        <img src="pmw.jpg" alt="Sertifikat Penerima Bantuan Modal — Program Mahasiswa Wirausaha (PMW)"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="cert-photo-fallback">Foto sertifikat belum ditemukan — pastikan file "pmw.jpg" satu folder dengan index.html</div>
+      </div>
+      <div class="cert-info">
+        <div>
+          <div class="cert-name">Penerima Bantuan Modal — Program Mahasiswa Wirausaha (PMW)</div>
+          <div class="cert-org">Politeknik Negeri Semarang</div>
+        </div>
+        <span class="cert-date">Sep 2025</span>
+      </div>
     </div>
     <div class="cert-card-photo">
       <div class="cert-photo-frame">
