@@ -42,6 +42,7 @@
     margin:0;
     overflow-x:hidden;
     max-width:100vw;
+    padding-top:78px;
     background:
       radial-gradient(1200px 500px at 15% -10%, #f6fafe 0%, transparent 60%),
       radial-gradient(900px 500px at 100% 10%, #eaf3fd 0%, transparent 55%),
@@ -57,7 +58,7 @@
   img,svg{display:block;}
 
   /* ---------- floating glossy nav ---------- */
-  header.nav{position:sticky; top:16px; z-index:50; padding:0 20px;}
+  header.nav{position:fixed; top:16px; left:0; right:0; z-index:50; padding:0 20px;}
   .nav-pill{
     max-width:var(--max); margin:0 auto;
     background:rgba(255,255,255,0.78);
@@ -94,7 +95,13 @@
     .nav-cta{display:none;}
     .burger{display:flex; align-items:center; justify-content:center;}
   }
-  .mobile-links{display:none; flex-direction:column; gap:4px; max-width:var(--max); margin:8px auto 0; padding:14px; background:var(--card); border-radius:var(--r-md); box-shadow:var(--shadow-md);}
+  .mobile-links{
+    display:none; flex-direction:column; gap:4px;
+    position:fixed; top:78px; left:20px; right:20px; z-index:49;
+    max-width:var(--max); margin:0 auto;
+    padding:14px; background:var(--card); border-radius:var(--r-md); box-shadow:var(--shadow-md);
+    max-height:calc(100vh - 100px); overflow-y:auto;
+  }
   .mobile-links.show{display:flex;}
   .mobile-links a{text-decoration:none; color:var(--ink); padding:11px 14px; border-radius:var(--r-sm); font-weight:500;}
   .mobile-links a:hover{background:var(--blue-tint);}
@@ -416,7 +423,7 @@
   </div>
 </header>
 
-<section class="hero" id="top" style="padding-top:56px;">
+<section class="hero" id="top" style="padding-top:8px;">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="orb orb-1"></div>
@@ -780,13 +787,32 @@
 <script>
   const burger = document.getElementById('burgerBtn');
   const mobileLinks = document.getElementById('mobileLinks');
+  let scrollLockY = 0;
+  function lockScroll(){
+    scrollLockY = window.scrollY || window.pageYOffset;
+    document.body.style.position = 'fixed';
+    document.body.style.top = (-scrollLockY) + 'px';
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+  }
+  function unlockScroll(){
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollLockY);
+  }
   burger.addEventListener('click', () => {
     const open = mobileLinks.classList.toggle('show');
     burger.setAttribute('aria-expanded', open);
+    if (open) { lockScroll(); } else { unlockScroll(); }
   });
   mobileLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     mobileLinks.classList.remove('show');
     burger.setAttribute('aria-expanded', 'false');
+    unlockScroll();
   }));
 
   const revealEls = document.querySelectorAll('.reveal, .stat-card');
